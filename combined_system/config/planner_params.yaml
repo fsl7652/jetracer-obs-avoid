@@ -1,0 +1,65 @@
+vehicle:
+  cars_num: 1
+  car_id: 0
+  car_width: 0.248
+  car_length: 0.192
+  car_wheelbase: 0.148
+  car_front_suspension: 0.0
+  car_rear_suspension: 0.0
+  car_max_steering_angle: 45.0
+  car_d_cr: 0.1
+
+mapping:
+  frame_id: "map"
+  origin_x: -2.5
+  origin_y: -5.0
+  origin_z: 0.0
+  map_size_x: 5.0
+  map_size_y: 10.0
+  map_size_z: 1.0
+  resolution: 0.05
+  init_map_topic: "/local_costmap/costmap/costmap"
+  live_map_topic: "/local_costmap/costmap/costmap_updates"
+
+search:
+  horizon: 30.0                   
+  yaw_resolution: 0.2             
+  lambda_heu: 3.0                 
+  allocate_num: 100000             
+  check_num: 8                     
+  max_search_time: 3000.0          
+
+  traj_forward_penalty: 1.0        
+  traj_back_penalty: 3.5         
+  traj_gear_switch_penalty: 20.0   
+  traj_steer_penalty: 0.7         
+  traj_steer_change_penalty: 0.2  
+  step_arc: 0.15                  
+  checkl: 0.15                     
+  max_vel: 0.25                    
+  max_acc: 0.15                     
+  max_cur: 2.0                    
+  time_resolution: 0.05            
+  distance_resolution: 0.25 
+  velocity_resolution: 0.25 
+
+planning:
+  car_id: 0
+  traj_piece_duration: 1.0         
+  traj_res: 6                      
+  dense_traj_res: 15              
+
+optimizing:
+  traj_resolution: 6             
+  des_traj_resolution: 15
+  wei_sta_obs: 10000.0           
+  wei_feas: 8000.0               
+  wei_sqrvar: 300.0               
+  wei_time: 3000.0               
+  max_vel: 0.4                    
+  min_vel: -0.2                  
+  max_acc: 0.3                    
+  min_acc: -0.2
+  max_cur: 1.8                  
+  traj_piece_duration: 1.0
+  half_margin: 0.1

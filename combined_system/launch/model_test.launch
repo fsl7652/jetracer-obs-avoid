@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find combined_system)/launch/road_follow.launch" />
+	
+	 <node pkg="combined_system" type="model_test" name="model_test" output="screen">
+	 </node>
+</launch>

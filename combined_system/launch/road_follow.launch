@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find jetracer)/launch/jetracer.launch" />
+
+  <arg name="road_model_path" default="$(find combined_system)/models/updated_model_trt.pth"/>
+  <arg name="detect_model_path" default="$(find combined_system)/models/best_model_trt.pth"/>
+
+  <node name="road_follower" pkg="combined_system" type="run_py3_venv.sh" output="screen">
+    <param name="road_model_path" value="$(arg road_model_path)"/>
+    <param name="detect_model_path" value="$(arg detect_model_path)"/>
+  </node>
+
+</launch>

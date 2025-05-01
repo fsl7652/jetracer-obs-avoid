@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find jetracer)/launch/jetracer.launch" />
+    <include file="$(find jetracer)/launch/lidar.launch" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_laser"
+          args="0 0 0 0 0 0 base_link laser_frame"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_base_link" 
+          args="0 0 0 0 0 0 base_footprint base_link" />
+
+     <node name="local_costmap" pkg="costmap_2d" type="costmap_2d_node" output="screen">
+		<rosparam file="$(find traj_planner)/config/local_costmap_params.yaml" command="load" ns="costmap"/>
+	</node>
+
+    <node pkg="gmapping" type="slam_gmapping" name="slam_mapping" output="screen">
+        <param name="map_frame" value="map"/>
+        <param name="odom_frame" value="odom"/>
+        <param name="base_frame" value="base_link"/>
+        <param name="map_update_interval" value="1.0"/>
+        <remap from="scan" to="/scan"/>
+    </node>
+
+    <node pkg="traj_planner" type="planner_node" name="planner_node" output="screen">
+		<rosparam command="load" file="$(find traj_planner)/config/planner_params.yaml" />
+    </node>
+</launch>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<rosparam command="load" file="$(find traj_planner)/config/planner_params.yaml" />
+	<test test-name="mapping_test" pkg="traj_planner" type="mapping_test"/>
+</launch>
