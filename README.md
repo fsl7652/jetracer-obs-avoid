@@ -23,6 +23,10 @@ This trt model can be tested live using the test_model notebook and the probabil
 
 This process was inspired and has been adapted from the collsion avoidance classifier from the NVIDIA-AI-IOT JetBot repository
 
+### Obstacle Avoidance Algorithm
+
+The obstacle avoidance algorithm was inspired by and adapted from the ZJU-FAST-LAB [Car-like robotic swarm](https://github.com/ZJU-FAST-Lab/Car-like-Robotic-swarm/tree/main) project, the algorithm was simplified for the lower computational power of the JetRacer, specifically by removing dynamic obstacle calculations to reduce computational load. As well as this the originally decentralised system was changed to directly command the JetRacer using cmd_vel commands based on calculated trajectories.
+
 ### Running The Final System
 
 A python 3 virtual environment is necessary to run this project if you are using ROS Noetic or another version which doesn't support Python 3, a guide is found [here](https://docs.python.org/3/library/venv.html)
