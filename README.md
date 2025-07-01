@@ -52,3 +52,5 @@ PyTorch, torchvision, torch2trt packages are all required in python
 Waveshare JetRacer Wiki - https://www.waveshare.com/wiki/JetRacer_ROS_AI_Kit
 
 Nvidia JetRacer Repositoty - https://github.com/NVIDIA-AI-IOT/jetracer
+
+Car-like Robotic SWARM - https://github.com/ZJU-FAST-Lab/Car-like-Robotic-swarm/tree/main
